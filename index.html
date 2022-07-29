@@ -4,7 +4,7 @@
     <title>Aprendizado estatístico de máquinas na análise de sentimentos em discurso</title>
     <meta charset="utf-8" />
     <meta name="author" content="Guilherme Fernandes Castro de Oliveira" />
-    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="libs/panelset-0.2.6/panelset.js"></script>
     <link rel="shortcut icon" href="favicon.png?" type="image/png">
@@ -62,6 +62,7 @@ Professor Doutor Guaraci Requena de Lima
 
 - O que é Machine Learning?
 - Tipos de Modelo
+- Random Forest
 - Processamento de Linguagem Natural
 - Term frequency–inverse document frequency
 - Aplicação a uma base real
@@ -71,26 +72,125 @@ Professor Doutor Guaraci Requena de Lima
 ---
 # O que é Machine Learning?
 
+&lt;img src="img/machinelearning.gif" width="80%" style="display: block; margin: auto;" /&gt;
+
+**Fonte:** [TUMBLR](https://24.media.tumblr.com/tumblr_mb7vwlkm1a1rhb8umo1_500.gif)
+
+---
+# O que é Machine Learning?
+
 .justify[
 "Machine learning é um ramo da inteligência artificial (IA) e da ciência da computação que se concentra no uso de dados e algoritmos para imitar a maneira como os humanos aprendem, melhorando gradualmente sua precisão."
 ]
 
+**Fonte:** [IBM](https://www.ibm.com/br-pt/cloud/learn/machine-learning)
 --
-
-"Por meio do uso de métodos estatísticos, os algoritmos são treinados para fazer classificações ou previsões, revelando os principais insights em projetos de mineração de dados"
+&lt;/br&gt;&lt;/br&gt;
+.justify[
+"Por meio do uso de métodos estatísticos, os algoritmos são treinados para fazer classificações ou previsões, revelando os principais insights em projetos"
+]
 
 **Fonte:** [IBM](https://www.ibm.com/br-pt/cloud/learn/machine-learning)
+---
 
+# Dominação Mundial
+
+&lt;img src="img/terminator.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+
+**Fonte:** [SCREEN RANT](https://screenrant.com/terminator-logic-memes-funny/)
 
 ---
 # Tipos de Modelos
 
+.panelset[
+  .panel[.panel-name[Modelo Supervisionado]
+.center[
+&lt;img src="img/modelo-supervisionado.png" width="60%" /&gt;
+]
+
+**Fonte:** [progamaria](https://www.programaria.org/carreira-em-machine-learning-como-se-preparar-para-trabalhar-na-area/)
+  ]
+  .panel[.panel-name[Modelo Não Supervisionado]
+.center[
+&lt;img src="img/naosupervisionado.png" width="60%" /&gt;
+]
+
+**Fonte:** [progamaria](https://www.programaria.org/carreira-em-machine-learning-como-se-preparar-para-trabalhar-na-area/)
+  ]
+]
+
+---
+# Random Forest
+
+---
+# Random Forest
+
+.justify[
+Exemplo: Warley precisa comprar um celular novo, mas não sabe como decidir. Dessa forma, ele pega uma lista de celulares e quer resumir em poucos casos.
+]
+
+#### Arvóre de Decisão
+
+--
+.center[
+&lt;img src="img/decision-tree.png" width="90%" /&gt;
+]
+
+**Fonte:** [Section](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/)
+
+---
+# Random Forest
+
+.center[
+&lt;img src="img/randomforest.png" width="75%" /&gt;
+]
+
+**Fonte:** [Section](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/)
+---
+# Processamento de Linguagem Natural
+
+.center[
+&lt;img src="img/nlp.jpeg" width="90%" /&gt;
+]
+
+**Fonte:** [LinkedIn](https://www.linkedin.com/pulse/processamento-de-linguagem-natural-qual-import%C3%A2ncia-da-vitorino/?originalSubdomain=pt)
+
+---
+# Processamento de Linguagem Natural
+
+## Token
+## Dicionário
+## Corpus
+## Pré-Processamento
+- ### Stop Words
+- ### Flexão
+
+---
+# Processamento de Linguagem Natural
+
+## Flexão
+
+### Stemming
+
+"Stemming é uma abordagem baseada em regras que converte as palavras em sua palavra raiz (radical) para remover a flexão sem se preocupar com o contexto da palavra na frase."
+
+### Lematização 
+
+"A lematização, ao contrário de Stemming, reduz as palavras flexionadas adequadamente, garantindo que a palavra raiz (lema) pertence ao idioma."
+
+**Fonte:** [INSIGHT](https://insightlab.ufc.br/pln-processamento-de-linguagem-natural-para-iniciantes)
 
 
 ---
 # Processamento de Linguagem Natural
 
+## Flexão
 
+.center[
+&lt;img src="img/stemmingVSlemming.jpg" width="100%" /&gt;
+]
+
+**Fonte:** [Alura](https://www.alura.com.br/artigos/lemmatization-vs-stemming-quando-usar-cada-uma)
 
 ---
 # Term frequency–inverse document frequency
@@ -99,61 +199,167 @@ Professor Doutor Guaraci Requena de Lima
   .panel[.panel-name[TF]
 .center[
 
+`\(tf(t, d) = \dfrac{\text{Número de vezes que o token } t \text{ aparece no dicionário } d}{\text{Número total de tokens no dicionário }d}\)`
 ]
 
-&lt;!-- **Fonte:** [Governo Federal do Brasil](https://opendatasus.saude.gov.br/dataset/casos-nacionais) --&gt;
   ]
 
   .panel[.panel-name[IDF]
 .center[
+`\(IDF(t) = \ln{\bigg( \dfrac{\text{Número total de dicionários }}{\text{Número de dicionários que o token } t \text{ aparece} + 1} \bigg)}\)`
 
 ]
 
-&lt;!-- **Fonte:** [Brasil.io](https://brasil.io/home/) --&gt;
   ]
 
   .panel[.panel-name[TF-IDF]
 .center[
-
+`\(tf\text{-}IDF(t, d) = tf(t, d) \cdot IDF(t)\)`
 ]
 
-&lt;!-- **Fonte:** [Jhon Hopkins University](https://github.com/CSSEGISandData/COVID-19) --&gt;
   ]
 ]
 
 ---
 # Aplicação a uma base real
 
+.center[
+&lt;img src="img/kaggle.jpg" width="100%" /&gt;
+]
 
+**Fonte:** [Link](https://www.kaggle.com/competitions/sentiment-analysis-on-movie-reviews)
+
+--
+- 0: Negativo
+- 1: Um pouco negativo
+- 2: Neutro
+- 3: Um pouco positivo
+- 4: Positivo
+
+---
+# Base
+
+Linhas: 
+
+.center[
+&lt;img src="img/base.png" width="100%" /&gt;
+]
+
+---
+# Pós Pré-Processamento
+
+Linhas: 8497
+
+.center[
+&lt;img src="img/posTratamento.png" width="100%" /&gt;
+]
+
+---
+# Matrizes
+
+Linhas: 8497
+
+Colunas: 10142
+
+.panelset[
+  .panel[.panel-name[Apenas Frequência]
+.center[
+&lt;img src="img/tf.png" width="150%" /&gt;
+]
+
+  ]
+  .panel[.panel-name[TF-IDF]
+.center[
+&lt;img src="img/tf-idf.png" width="150%" /&gt;
+]
+
+  ]
+]
+
+---
+# Após SVD
+
+Linhas: 8497
+
+Colunas: 25
+
+.panelset[
+  .panel[.panel-name[Apenas Frequência]
+.center[
+&lt;img src="img/tf-svd.png" width="100%" /&gt;
+]
+
+  ]
+  .panel[.panel-name[TF-IDF]
+.center[
+&lt;img src="img/tf-idf-svd.png" width="100%" /&gt;
+]
+
+  ]
+]
+
+
+---
+# Resultados
+
+.panelset[
+  .panel[.panel-name[Apenas Frequência]
+.center[
+&lt;img src="img/tf-predict.png" width="25%" /&gt;
+]
+
+  ]
+  .panel[.panel-name[TF-IDF]
+.center[
+&lt;img src="img/tf-idf-predict.png" width="25%" /&gt;
+]
+
+  ]
+]
+---
+# Resultados
+
+- ### Score Apenas Frequência: 0.249
+- ### Score TF-IDF: 0.261
 ---
 # Próximos passos
 
+- ## Conseguir ajustar um modelo para esta base
+
+--
+- ## Aplicar em uma base real
+
+--
+- ## Escrever o relatório
 
 ---
 # Onde queremos chegar
 
+- ## Construir uma api
 
 ---
 # Referências
 
-
+- Practical Text Analytics, Murugan Anandarajan, Chelsey Hill, Thomas Nolan
+- R
+- Python
 ---
 # Contato
 
 .center[
 Guilherme Fernandes Castro de Oliveira
 ]
-.center[
 
+&lt;img src="img/eu.jpeg" width="35%" style="display: block; margin: auto;" /&gt;
+
+.center[
+&lt;a href="https://www.linkedin.com/in/guifernandesco/"&gt;&lt;i class="fab fa-linkedin" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://github.com/GuilhermeFCO"&gt;&lt;i class="fab fa-github" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://www.facebook.com/guifernandesco"&gt;&lt;i class="fab fa-facebook" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://www.instagram.com/guifernandesco/"&gt;&lt;i class="fab fa-instagram" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://twitter.com/guifernandesco"&gt;&lt;i class="fab fa-twitter" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="mailto:guilherme.f.castro@ufv.br"&gt;&lt;i class="far fa-envelope" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/i&gt;&lt;/a&gt;
 ]
-&lt;!-- .center[ --&gt;
-&lt;!-- &lt;a href="https://www.linkedin.com/in/guifernandesco/"&gt;&lt;i class="fa-brands fa-linkedin" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt; --&gt;
-&lt;!-- &lt;a href="https://github.com/GuilhermeFCO"&gt;&lt;i class="fa-brands fa-github" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt; --&gt;
-&lt;!-- &lt;a href="https://www.facebook.com/guifernandesco"&gt;&lt;i class="fa-brands fa-facebook" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt; --&gt;
-&lt;!-- &lt;a href="https://www.instagram.com/guifernandesco/"&gt;&lt;i class="fa-brands fa-instagram" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt; --&gt;
-&lt;!-- &lt;a href="https://twitter.com/guifernandesco"&gt;&lt;i class="fa-brands fa-twitter" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/a&gt; --&gt;
-&lt;!-- &lt;a href="mailto:guilherme.f.castro@ufv.br"&gt;&lt;i class="far fa-envelope" style="font-size:40px;"&gt;&lt;/i&gt;&lt;/i&gt;&lt;/a&gt; --&gt;
-&lt;!-- ] --&gt;
 .center[
 **E-mail:** &lt;a href="mailto:guilherme.f.castro@ufv.br"&gt;guilherme.f.castro@ufv.br&lt;/a&gt;
 ]
